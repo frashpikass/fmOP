@@ -1,0 +1,337 @@
+#N canvas 216 41 1460 893 10;
+#X obj 1174 287 cnv 15 256 50 empty empty Handle\ connections 20 12
+0 14 -233017 -2049 0;
+#X obj 610 709 cnv 15 228 130 empty empty empty 20 12 0 14 -260160
+-64 0;
+#X obj 634 717 cnv 15 194 114 empty empty empty 20 12 0 14 -131136
+-66577 0;
+#X obj 610 310 cnv 15 228 418 empty empty OPERATOR\ \$1 20 12 0 14
+-260160 -64 0;
+#X obj 634 617 cnv 15 194 80 empty empty empty 20 12 0 14 -131136 -66577
+0;
+#X obj 634 512 cnv 15 194 94 empty empty empty 20 12 0 14 -131136 -66577
+0;
+#X obj 634 340 cnv 15 194 160 empty empty empty 20 12 0 14 -131136
+-66577 0;
+#X obj 29 404 cnv 15 126 59 empty empty HEART\ <3 20 12 0 14 -258049
+-262144 0;
+#X obj 28 778 cnv 15 455 93 empty empty Outputs 20 12 0 14 -135137
+-64 0;
+#X obj 1174 27 cnv 15 256 254 empty empty Load/reset\ defaults 20 12
+0 14 -233017 -2049 0;
+#X obj 627 505 cnv 15 194 94 empty empty Input\ amplification 20 12
+0 12 -260928 -258112 0;
+#X obj 632 552 cnv 15 183 20 empty empty OR 81 8 0 14 -261632 -66577
+0;
+#X obj 29 11 cnv 15 670 104 empty empty Inputs 20 12 0 14 -135137 -64
+0;
+#X obj 42 432 osc~;
+#X text 879 759 OP.pd - An FM operator inspired by Yamaha DX7;
+#X obj 42 527 *~;
+#X obj 42 814 outlet~;
+#X obj 628 334 EG \$1;
+#X obj 791 534 tgl 15 0 \$1-sync.s \$1-sync.r empty 17 7 0 10 -262144
+-1 -1 1 1;
+#X floatatom 740 576 5 0 0 0 - - -, f 5;
+#X floatatom 740 576 5 0 0 0 - #1-fAbs.r #1-fAbs.s, f 5;
+#X obj 627 610 cnv 15 194 80 empty empty Output\ (freq.\ and\ level)
+20 12 0 12 -260928 -258112 0;
+#X obj 680 673 tgl 15 0 \$1-active.s \$1-active.r ON -17 5 0 10 -262144
+-1 -1 0 1;
+#X floatatom 680 652 5 0 99 0 Level #1-level.r #1-level.s, f 5;
+#X obj 42 63 inlet~;
+#X text 40 44 IN1: Modulator signal;
+#X text 322 44 IN2: Main freq;
+#X text 437 44 IN3: note velocity;
+#X obj 323 63 inlet;
+#X obj 441 63 inlet;
+#X obj 779 634 bng 15 250 50 0 resetRatio\$0 empty reset 15 5 0 8 -262144
+-1 -1;
+#X obj 1193 75 r resetRatio\$0;
+#X obj 1193 97 t b;
+#X obj 1193 119 1;
+#X text 1193 55 Reset Modulator/Main ratio with btn;
+#X text 1175 7 Backend logic;
+#X obj 57 614 t b f;
+#X obj 142 614 t b f;
+#X obj 42 683 *~;
+#X text 57 547 Operator output scaling;
+#X obj 57 655 *;
+#X text 67 526 Amplitude envelope;
+#X text 74 431 Oscillator;
+#X text 155 200 Modulator scaling;
+#X floatatom 75 683 5 0 0 0 - - -, f 5;
+#X text 664 287 Frontend (Interface);
+#X obj 57 589 / 100;
+#X obj 86 282 t b f;
+#X obj 174 282 t b f;
+#X obj 250 282 t b f;
+#X obj 323 282 t b f;
+#X text 122 282 $f2;
+#X text 209 282 $f3;
+#X text 285 282 $f4;
+#X text 357 282 $f5;
+#X text 45 282 $v1;
+#X floatatom 129 316 5 0 0 0 - - -, f 5;
+#X floatatom 217 316 5 0 0 0 - - -, f 5;
+#X floatatom 304 316 5 0 0 0 - - -, f 5;
+#X floatatom 391 316 5 0 0 0 - - -, f 5;
+#X obj 866 339 tools/testOutput;
+#X text 879 777 (C) 2017 Frash Pikass;
+#X obj 866 11 tools/testInput;
+#X obj 3 756 s~ outputTestPlot\$0;
+#X obj 866 313 r~ outputTestPlot\$0;
+#X obj 627 710 cnv 15 194 114 empty empty Connections 20 12 0 12 -260928
+-258112 0;
+#X floatatom 470 90 5 0 0 0 - - -, f 5;
+#X floatatom 1135 302 5 0 0 0 - - -, f 5;
+#X floatatom 1085 302 5 0 0 0 - - -, f 5;
+#X floatatom 740 633 5 0 31 0 - #1-fRatio.r #1-fRatio.s, f 5;
+#X text 631 632 Mod/Main f. Ratio;
+#X text 644 532 Scale with output freq.;
+#X text 650 576 Absolute width;
+#X text 773 576 Hz;
+#X floatatom 779 736 5 0 0 0 - #1-fbAmp.r #1-fbAmp.s, f 5;
+#X text 629 736 Feedback input amplitude;
+#X obj 391 282 t b f;
+#X floatatom 479 316 5 0 0 0 - - -, f 5;
+#X obj 128 814 outlet;
+#X text 40 833 Out1: signal;
+#X text 128 833 Out2: send to this OP;
+#X text 272 833 Out3: send to this feedback loop;
+#X obj 272 814 outlet;
+#X text 567 44 IN4: Feedback signal;
+#X obj 567 63 inlet~;
+#X text 426 282 $f6;
+#X obj 42 349 expr~ ($f3)*$f2*$f5*$v1 + (1-$f3)*$f4*$v1 + $f5*$f2 +$f6*$v7
+, f 88;
+#X text 546 282 $v7;
+#X obj 705 771 tgl 15 0 \$1-out1.s \$1-out1.r 1 5 -8 0 10 -262144 -1
+-1 0 1;
+#X obj 724 771 tgl 15 0 \$1-out2.s \$1-out2.r 2 5 -8 0 10 -262144 -1
+-1 0 1;
+#X obj 743 771 tgl 15 0 \$1-out3.s \$1-out3.r 3 5 -8 0 10 -262144 -1
+-1 0 1;
+#X obj 762 771 tgl 15 0 \$1-out4.s \$1-out4.r 4 5 -8 0 10 -262144 -1
+-1 0 1;
+#X obj 781 771 tgl 15 0 \$1-out5.s \$1-out5.r 5 5 -8 0 10 -262144 -1
+-1 0 1;
+#X obj 800 771 tgl 15 0 \$1-out6.s \$1-out6.r 6 5 -8 0 10 -262144 -1
+-1 0 1;
+#X obj 686 771 tgl 15 0 \$1-out0.s \$1-out0.r OUT -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 705 789 tgl 15 0 \$1-fb1.s \$1-fb1.r 1 5 20 0 10 -262144 -1
+-1 0 6;
+#X obj 724 789 tgl 15 0 \$1-fb2.s \$1-fb2.r 2 5 20 0 10 -262144 -1
+-1 0 1;
+#X obj 743 789 tgl 15 0 \$1-fb3.s \$1-fb3.r 3 5 20 0 10 -262144 -1
+-1 0 1;
+#X obj 762 789 tgl 15 0 \$1-fb4.s \$1-fb4.r 4 5 20 0 10 -262144 -1
+-1 0 1;
+#X obj 781 789 tgl 15 0 \$1-fb5.s \$1-fb5.r 5 5 20 0 10 -262144 -1
+-1 0 1;
+#X obj 800 789 tgl 15 0 \$1-fb6.s \$1-fb6.r 6 5 20 0 10 -262144 -1
+-1 0 1;
+#X text 630 771 Output->;
+#X text 640 789 Feedback->;
+#N canvas 891 52 948 998 connectionmanager 0;
+#X obj 255 -642 pack f f f f f f f;
+#X obj 249 -543 unpack f f f f f f f;
+#X obj 75 -707 t b f;
+#X obj 149 -707 t b f;
+#X obj 223 -707 t b f;
+#X obj 297 -707 t b f;
+#X obj 371 -707 t b f;
+#X obj 445 -707 t b f;
+#X obj 519 -707 t b f;
+#X obj 60 -380 t b f;
+#X obj 131 -380 t b f;
+#X obj 202 -380 t b f;
+#X obj 273 -380 t b f;
+#X obj 344 -380 t b f;
+#X obj 415 -380 t b f;
+#X obj 238 -330 pack f f f f f f;
+#X obj 238 -221 unpack f f f f f f;
+#X text 60 -799 Manage connections: update the state of connections
+whenever a configuration is loaded or saved;
+#X obj 255 -617 s \$1-destination.s;
+#X obj 249 -572 r \$1-destination.r;
+#X obj 238 -308 s \$1-fbLoop.s;
+#X obj 238 -252 r \$1-fbLoop.r;
+#X obj 75 -739 r \$1-out0.s;
+#X obj 149 -739 r \$1-out1.s;
+#X obj 223 -739 r \$1-out2.s;
+#X obj 297 -739 r \$1-out3.s;
+#X obj 371 -739 r \$1-out4.s;
+#X obj 445 -739 r \$1-out5.s;
+#X obj 519 -739 r \$1-out6.s;
+#X obj 91 -506 s \$1-out0.r;
+#X obj 165 -506 s \$1-out1.r;
+#X obj 239 -506 s \$1-out2.r;
+#X obj 313 -506 s \$1-out3.r;
+#X obj 387 -506 s \$1-out4.r;
+#X obj 461 -506 s \$1-out5.r;
+#X obj 535 -506 s \$1-out6.r;
+#X obj 60 -407 r \$1-fb1.s;
+#X obj 131 -407 r \$1-fb2.s;
+#X obj 202 -407 r \$1-fb3.s;
+#X obj 273 -407 r \$1-fb4.s;
+#X obj 344 -407 r \$1-fb5.s;
+#X obj 415 -407 r \$1-fb6.s;
+#X obj 88 -123 s \$1-fb1.r;
+#X obj 159 -123 s \$1-fb2.r;
+#X obj 230 -123 s \$1-fb3.r;
+#X obj 301 -123 s \$1-fb4.r;
+#X obj 372 -123 s \$1-fb5.r;
+#X obj 443 -123 s \$1-fb6.r;
+#X connect 0 0 18 0;
+#X connect 1 0 29 0;
+#X connect 1 1 30 0;
+#X connect 1 2 31 0;
+#X connect 1 3 32 0;
+#X connect 1 4 33 0;
+#X connect 1 5 34 0;
+#X connect 1 6 35 0;
+#X connect 2 0 0 0;
+#X connect 2 1 0 0;
+#X connect 3 0 0 0;
+#X connect 3 1 0 1;
+#X connect 4 0 0 0;
+#X connect 4 1 0 2;
+#X connect 5 0 0 0;
+#X connect 5 1 0 3;
+#X connect 6 0 0 0;
+#X connect 6 1 0 4;
+#X connect 7 0 0 0;
+#X connect 7 1 0 5;
+#X connect 8 0 0 0;
+#X connect 8 1 0 6;
+#X connect 9 0 15 0;
+#X connect 9 1 15 0;
+#X connect 10 0 15 0;
+#X connect 10 1 15 1;
+#X connect 11 0 15 0;
+#X connect 11 1 15 2;
+#X connect 12 0 15 0;
+#X connect 12 1 15 3;
+#X connect 13 0 15 0;
+#X connect 13 1 15 4;
+#X connect 14 0 15 0;
+#X connect 14 1 15 5;
+#X connect 15 0 20 0;
+#X connect 16 0 42 0;
+#X connect 16 1 43 0;
+#X connect 16 2 44 0;
+#X connect 16 3 45 0;
+#X connect 16 4 46 0;
+#X connect 16 5 47 0;
+#X connect 19 0 1 0;
+#X connect 21 0 16 0;
+#X connect 22 0 2 0;
+#X connect 23 0 3 0;
+#X connect 24 0 4 0;
+#X connect 25 0 5 0;
+#X connect 26 0 6 0;
+#X connect 27 0 7 0;
+#X connect 28 0 8 0;
+#X connect 36 0 9 0;
+#X connect 37 0 10 0;
+#X connect 38 0 11 0;
+#X connect 39 0 12 0;
+#X connect 40 0 13 0;
+#X connect 41 0 14 0;
+#X restore 1233 314 pd connectionmanager;
+#X obj 1303 205 loadbang;
+#X obj 1303 229 1;
+#X obj 1196 205 loadbang;
+#X obj 1196 229 1;
+#X text 1196 183 Load some defaults;
+#X obj 1196 250 s \$1-sync.r;
+#X obj 174 221 r \$1-sync.r;
+#X obj 181 244 r \$1-sync.s;
+#X obj 250 221 r \$1-fAbs.r;
+#X obj 257 246 r \$1-fAbs.s;
+#X obj 86 221 r \$1-fRatio.r;
+#X obj 93 244 r \$1-fRatio.s;
+#X obj 1303 251 s \$1-fRatio.r;
+#X obj 57 567 r \$1-level.s;
+#X obj 1193 141 s \$1-fRatio.r;
+#X obj 142 567 r \$1-active.s;
+#X obj 391 221 r \$1-fbAmp.r;
+#X obj 398 244 r \$1-fbAmp.s;
+#X obj 128 732 r \$1-destination.r;
+#X obj 272 731 r \$1-fbLoop.r;
+#X obj 282 755 r \$1-fbLoop.s;
+#X obj 139 755 r \$1-destination.s;
+#X text 60 89 fRatio (Mod/Main ratio) acts as a multiplier (amplifier)
+for the incoming modulator signal if it's in sync with main frequency
+(option SCALE WITH OUTPUT FREQ.). \; It also acts as a multiplier
+for the main frequency of the oscillator \, which is the note frequency.
+;
+#X floatatom 779 652 5 0 0 0 Freq.Fine #1-fFine.r #1-fFine.s, f 5
+;
+#X obj 325 249 +;
+#X obj 356 175 r \$1-fFine.s;
+#X obj 356 194 r \$1-fFine.r;
+#X obj 336 220 t b;
+#X connect 13 0 15 0;
+#X connect 15 0 38 0;
+#X connect 17 0 15 1;
+#X connect 24 0 86 0;
+#X connect 28 0 128 0;
+#X connect 29 0 17 0;
+#X connect 29 0 66 0;
+#X connect 31 0 32 0;
+#X connect 32 0 33 0;
+#X connect 33 0 118 0;
+#X connect 36 0 40 0;
+#X connect 36 1 40 0;
+#X connect 37 0 40 0;
+#X connect 37 1 40 1;
+#X connect 38 0 16 0;
+#X connect 38 0 63 0;
+#X connect 40 0 38 1;
+#X connect 40 0 44 0;
+#X connect 46 0 36 0;
+#X connect 47 1 56 0;
+#X connect 47 1 86 1;
+#X connect 48 1 57 0;
+#X connect 48 1 86 2;
+#X connect 49 1 58 0;
+#X connect 49 1 86 3;
+#X connect 50 1 59 0;
+#X connect 50 1 86 4;
+#X connect 62 1 50 0;
+#X connect 62 1 68 0;
+#X connect 62 2 17 0;
+#X connect 62 2 67 0;
+#X connect 64 0 60 0;
+#X connect 76 1 77 0;
+#X connect 77 0 86 5;
+#X connect 84 0 86 6;
+#X connect 86 0 13 0;
+#X connect 104 0 105 0;
+#X connect 105 0 116 0;
+#X connect 106 0 107 0;
+#X connect 107 0 109 0;
+#X connect 110 0 48 0;
+#X connect 111 0 48 0;
+#X connect 112 0 49 0;
+#X connect 113 0 49 0;
+#X connect 114 0 47 0;
+#X connect 115 0 47 0;
+#X connect 117 0 46 0;
+#X connect 119 0 37 0;
+#X connect 120 0 76 0;
+#X connect 121 0 76 0;
+#X connect 122 0 78 0;
+#X connect 123 0 82 0;
+#X connect 124 0 82 0;
+#X connect 125 0 78 0;
+#X connect 128 0 50 0;
+#X connect 129 0 128 1;
+#X connect 129 0 131 0;
+#X connect 130 0 128 1;
+#X connect 130 0 131 0;
+#X connect 131 0 128 0;
+#X coords 0 -1 1 1 230 531 1 609 309;

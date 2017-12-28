@@ -1,0 +1,481 @@
+// Algorithm 1
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 0 1 0 0 0 0 0;
+2-fbLoop.r 0 0 0 0 0 0;
+3-destination.r 1 0 0 0 0 0 0;
+3-fbLoop.r 0 0 0 0 0 0;
+4-destination.r 0 0 0 3 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 0 0 0 0 4 0 0;
+5-fbLoop.r 0 0 0 0 0 0;
+6-destination.r 0 0 0 0 0 5 0;
+6-fbLoop.r 0 0 0 0 0 6;
+
+// Algorithm 2
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 0 1 0 0 0 0 0;
+2-fbLoop.r 0 2 0 0 0 0;
+3-destination.r 1 0 0 0 0 0 0;
+3-fbLoop.r 0 0 0 0 0 0;
+4-destination.r 0 0 0 3 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 0 0 0 0 4 0 0;
+5-fbLoop.r 0 0 0 0 0 0;
+6-destination.r 0 0 0 0 0 5 0;
+6-fbLoop.r 0 0 0 0 0 0;
+
+// Algorithm 3
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 0 1 0 0 0 0 0;
+2-fbLoop.r 0 0 0 0 0 0;
+3-destination.r 0 0 2 0 0 0 0;
+3-fbLoop.r 0 0 0 0 0 0;
+4-destination.r 1 0 0 0 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 0 0 0 0 4 0 0;
+5-fbLoop.r 0 0 0 0 0 0;
+6-destination.r 0 0 0 0 0 5 0;
+6-fbLoop.r 0 0 0 0 0 6;
+
+// Algorithm 4
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 0 1 0 0 0 0 0;
+2-fbLoop.r 0 0 0 0 0 0;
+3-destination.r 0 0 2 0 0 0 0;
+3-fbLoop.r 0 0 0 0 0 0;
+4-destination.r 1 0 0 0 0 0 0;
+4-fbLoop.r 0 0 0 0 0 6;
+5-destination.r 0 0 0 0 4 0 0;
+5-fbLoop.r 0 0 0 0 0 0;
+6-destination.r 0 0 0 0 0 5 0;
+6-fbLoop.r 0 0 0 0 0 0;
+
+// Algorithm 5
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 0 1 0 0 0 0 0;
+2-fbLoop.r 0 0 0 0 0 0;
+3-destination.r 1 0 0 0 0 0 0;
+3-fbLoop.r 0 0 0 0 0 0;
+4-destination.r 0 0 0 3 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 1 0 0 0 0 0 0;
+5-fbLoop.r 0 0 0 0 0 0;
+6-destination.r 0 0 0 0 0 5 0;
+6-fbLoop.r 0 0 0 0 0 6;
+
+// Algorithm 6
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 0 1 0 0 0 0 0;
+2-fbLoop.r 0 0 0 0 0 0;
+3-destination.r 1 0 0 0 0 0 0;
+3-fbLoop.r 0 0 0 0 0 0;
+4-destination.r 0 0 0 3 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 1 0 0 0 0 0 0;
+5-fbLoop.r 0 0 0 0 0 6;
+6-destination.r 0 0 0 0 0 5 0;
+6-fbLoop.r 0 0 0 0 0 0;
+
+// Algorithm 7
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 0 1 0 0 0 0 0;
+2-fbLoop.r 0 0 0 0 0 0;
+3-destination.r 1 0 0 0 0 0 0;
+3-fbLoop.r 0 0 0 0 0 0;
+4-destination.r 0 0 0 3 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 0 0 0 3 0 0 0;
+5-fbLoop.r 0 0 0 0 0 0;
+6-destination.r 0 0 0 0 0 5 0;
+6-fbLoop.r 0 0 0 0 0 6;
+
+// Algorithm 8
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 0 1 0 0 0 0 0;
+2-fbLoop.r 0 0 0 0 0 0;
+3-destination.r 1 0 0 0 0 0 0;
+3-fbLoop.r 0 0 0 0 0 0;
+4-destination.r 0 0 0 3 0 0 0;
+4-fbLoop.r 0 0 0 4 0 0;
+5-destination.r 0 0 0 3 0 0 0;
+5-fbLoop.r 0 0 0 4 0 0;
+6-destination.r 0 0 0 0 0 5 0;
+6-fbLoop.r 0 0 0 0 0 0;
+
+// Algorithm 9
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 0 1 0 0 0 0 0;
+2-fbLoop.r 0 2 0 0 0 0;
+3-destination.r 1 0 0 0 0 0 0;
+3-fbLoop.r 0 0 0 0 0 0;
+4-destination.r 0 0 0 3 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 0 0 0 3 0 0 0;
+5-fbLoop.r 0 0 0 0 0 0;
+6-destination.r 0 0 0 0 0 5 0;
+6-fbLoop.r 0 0 0 0 0 0;
+
+// Algorithm 10
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 0 1 0 0 0 0 0;
+2-fbLoop.r 0 0 0 0 0 0;
+3-destination.r 0 0 2 0 0 0 0;
+3-fbLoop.r 0 0 3 0 0 0;
+4-destination.r 1 0 0 0 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 0 0 0 0 4 0 0;
+5-fbLoop.r 0 0 0 0 0 0;
+6-destination.r 0 0 0 0 4 0 0;
+6-fbLoop.r 0 0 0 0 0 0;
+
+// Algorithm 11
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 0 1 0 0 0 0 0;
+2-fbLoop.r 0 0 0 0 0 0;
+3-destination.r 0 0 2 0 0 0 0;
+3-fbLoop.r 0 0 0 0 0 0;
+4-destination.r 1 0 0 0 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 0 0 0 0 4 0 0;
+5-fbLoop.r 0 0 0 0 0 6;
+6-destination.r 0 0 0 0 4 0 0;
+6-fbLoop.r 0 0 0 0 0 6;
+
+// Algorithm 12
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 0 1 0 0 0 0 0;
+2-fbLoop.r 0 2 0 0 0 0;
+3-destination.r 1 0 0 0 0 0 0;
+3-fbLoop.r 0 0 0 0 0 0;
+4-destination.r 0 0 0 3 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 0 0 0 3 0 0 0;
+5-fbLoop.r 0 0 0 0 0 0;
+6-destination.r 0 0 0 3 0 0 0;
+6-fbLoop.r 0 0 0 0 0 0;
+
+// Algorithm 13
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 0 1 0 0 0 0 0;
+2-fbLoop.r 0 0 0 0 0 0;
+3-destination.r 1 0 0 0 0 0 0;
+3-fbLoop.r 0 0 0 0 0 0;
+4-destination.r 0 0 0 3 0 0 0;
+4-fbLoop.r 0 0 0 0 0 6;
+5-destination.r 0 0 0 3 0 0 0;
+5-fbLoop.r 0 0 0 0 0 6;
+6-destination.r 0 0 0 3 0 0 0;
+6-fbLoop.r 0 0 0 0 0 6;
+
+// Algorithm 14
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 0 1 0 0 0 0 0;
+2-fbLoop.r 0 0 0 0 0 0;
+3-destination.r 1 0 0 0 0 0 0;
+3-fbLoop.r 0 0 0 0 0 0;
+4-destination.r 0 0 0 3 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 0 0 0 0 4 0 0;
+5-fbLoop.r 0 0 0 0 0 6;
+6-destination.r 0 0 0 0 4 0 0;
+6-fbLoop.r 0 0 0 0 0 6;
+
+// Algorithm 15
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 0 1 0 0 0 0 0;
+2-fbLoop.r 0 2 0 0 0 0;
+3-destination.r 1 0 0 0 0 0 0;
+3-fbLoop.r 0 0 0 0 0 0;
+4-destination.r 0 0 0 3 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 0 0 0 0 4 0 0;
+5-fbLoop.r 0 0 0 0 0 0;
+6-destination.r 0 0 0 0 4 0 0;
+6-fbLoop.r 0 0 0 0 0 0;
+
+// Algorithm 16
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 0 1 0 0 0 0 0;
+2-fbLoop.r 0 0 0 0 0 0;
+3-destination.r 0 1 0 0 0 0 0;
+3-fbLoop.r 0 0 0 0 0 0;
+4-destination.r 0 0 0 3 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 0 1 0 0 0 0 0;
+5-fbLoop.r 0 0 0 0 0 0;
+6-destination.r 0 0 0 0 0 5 0;
+6-fbLoop.r 0 0 0 0 0 6;
+
+// Algorithm 17
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 0 1 0 0 0 0 0;
+2-fbLoop.r 0 2 0 0 0 0;
+3-destination.r 0 1 0 0 0 0 0;
+3-fbLoop.r 0 2 0 0 0 0;
+4-destination.r 0 0 0 3 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 0 1 0 0 0 0 0;
+5-fbLoop.r 0 2 0 0 0 0;
+6-destination.r 0 0 0 0 0 5 0;
+6-fbLoop.r 0 0 0 0 0 0;
+
+// Algorithm 18
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 0 1 0 0 0 0 0;
+2-fbLoop.r 0 0 3 0 0 0;
+3-destination.r 0 1 0 0 0 0 0;
+3-fbLoop.r 0 0 3 0 0 0;
+4-destination.r 0 1 0 0 0 0 0;
+4-fbLoop.r 0 0 3 0 0 0;
+5-destination.r 0 0 0 0 4 0 0;
+5-fbLoop.r 0 0 0 0 0 0;
+6-destination.r 0 0 0 0 0 5 0;
+6-fbLoop.r 0 0 0 0 0 0;
+
+// Dal 19 in poi, non posso più rappresentarli in modo normale
+
+// Algorithm 19
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 0 1 0 0 0 0 0;
+2-fbLoop.r 0 0 0 0 0 0;
+3-destination.r 0 0 2 0 0 0 0;
+3-fbLoop.r 0 0 0 0 0 0;
+4-destination.r 1 0 0 0 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 1 0 0 0 0 0 0;
+5-fbLoop.r 0 0 0 0 0 0;
+6-destination.r 0 0 0 0 4 5 0;
+6-fbLoop.r 0 0 0 0 0 6;
+
+// Algorithm 20
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 1 0 0 0 0 0 0;
+2-fbLoop.r 0 0 0 0 0 0;
+3-destination.r 0 1 2 0 0 0 0;
+3-fbLoop.r 0 0 3 0 0 0;
+4-destination.r 1 0 0 0 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 0 0 0 0 4 0 0;
+5-fbLoop.r 0 0 0 0 0 0;
+6-destination.r 0 0 0 0 4 0 0;
+6-fbLoop.r 0 0 0 0 0 0;
+
+// Algorithm 21
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 1 0 0 0 0 0 0;
+2-fbLoop.r 0 0 0 0 0 0;
+3-destination.r 0 1 2 0 0 0 0;
+3-fbLoop.r 0 0 3 0 0 0;
+4-destination.r 1 0 0 0 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 1 0 0 0 0 0 0;
+5-fbLoop.r 0 0 0 0 0 0;
+6-destination.r 0 0 0 0 4 5 0;
+6-fbLoop.r 0 0 0 0 0 0;
+
+// Algorithm 22
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 0 1 0 0 0 0 0;
+2-fbLoop.r 0 0 0 0 0 0;
+3-destination.r 1 0 0 0 0 0 0;
+3-fbLoop.r 0 0 0 0 0 0;
+4-destination.r 1 0 0 0 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 1 0 0 0 0 0 0;
+5-fbLoop.r 0 0 0 0 0 0;
+6-destination.r 0 0 0 3 4 5 0;
+6-fbLoop.r 0 0 0 0 0 0;
+
+// Algorithm 23
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 1 0 0 0 0 0 0;
+2-fbLoop.r 0 0 0 0 0 0;
+3-destination.r 0 0 2 0 0 0 0;
+3-fbLoop.r 0 0 0 0 0 0;
+4-destination.r 1 0 0 0 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 1 0 0 0 0 0 0;
+5-fbLoop.r 0 0 0 0 0 0;
+6-destination.r 0 0 0 0 4 5 0;
+6-fbLoop.r 0 0 0 0 0 6;
+
+// Algorithm 24
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 1 0 0 0 0 0 0;
+2-fbLoop.r 0 0 0 0 0 0;
+3-destination.r 1 0 0 0 0 0 0;
+3-fbLoop.r 0 0 0 0 0 0;
+4-destination.r 1 0 0 0 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 1 0 0 0 0 0 0;
+5-fbLoop.r 0 0 0 0 0 0;
+6-destination.r 0 0 0 3 4 5 0;
+6-fbLoop.r 0 0 0 0 0 6;
+
+// Algorithm 25
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 1 0 0 0 0 0 0;
+2-fbLoop.r 0 0 0 0 0 0;
+3-destination.r 1 0 0 0 0 0 0;
+3-fbLoop.r 0 0 0 0 0 0;
+4-destination.r 1 0 0 0 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 1 0 0 0 0 0 0;
+5-fbLoop.r 0 0 0 0 0 0;
+6-destination.r 0 0 0 0 4 5 0;
+6-fbLoop.r 0 0 0 0 0 6;
+
+// Algorithm 26
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 1 0 0 0 0 0 0;
+2-fbLoop.r 0 0 0 0 0 0;
+3-destination.r 0 0 2 0 0 0 0;
+3-fbLoop.r 0 0 0 0 0 0;
+4-destination.r 1 0 0 0 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 0 0 0 0 4 0 0;
+5-fbLoop.r 0 0 0 0 0 6;
+6-destination.r 0 0 0 0 4 0 0;
+6-fbLoop.r 0 0 0 0 0 6;
+
+// Algorithm 27
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 1 0 0 0 0 0 0;
+2-fbLoop.r 0 0 0 0 0 0;
+3-destination.r 0 0 2 0 0 0 0;
+3-fbLoop.r 0 0 3 0 0 0;
+4-destination.r 1 0 0 0 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 0 0 0 0 4 0 0;
+5-fbLoop.r 0 0 0 0 0 0;
+6-destination.r 0 0 0 0 4 0 0;
+6-fbLoop.r 0 0 0 0 0 0;
+
+// Algorithm 28
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 0 1 0 0 0 0 0;
+2-fbLoop.r 0 0 0 0 0 0;
+3-destination.r 1 0 0 0 0 0 0;
+3-fbLoop.r 0 0 0 0 0 0;
+4-destination.r 0 0 0 3 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 0 0 0 0 4 0 0;
+5-fbLoop.r 0 0 0 0 5 0;
+6-destination.r 1 0 0 0 0 0 0;
+6-fbLoop.r 0 0 0 0 0 0;
+
+// Algorithm 29
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 1 0 0 0 0 0 0;
+2-fbLoop.r 0 0 0 0 0 0;
+3-destination.r 1 0 0 0 0 0 0;
+3-fbLoop.r 0 0 0 0 0 0;
+4-destination.r 0 0 0 3 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 1 0 0 0 0 0 0;
+5-fbLoop.r 0 0 0 0 0 0;
+6-destination.r 0 0 0 0 0 5 0;
+6-fbLoop.r 0 0 0 0 0 6;
+
+// Algorithm 30
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 0 1 0 0 0 0 0;
+2-fbLoop.r 0 0 0 0 0 0;
+3-destination.r 1 0 0 0 0 0 0;
+3-fbLoop.r 0 0 0 0 0 0;
+4-destination.r 0 0 0 3 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 0 0 0 0 4 0 0;
+5-fbLoop.r 0 0 0 0 5 0;
+6-destination.r 1 0 0 0 0 0 0;
+6-fbLoop.r 0 0 0 0 0 0;
+
+// Algorithm 31
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 1 0 0 0 0 0 0;
+2-fbLoop.r 0 0 0 0 0 0;
+3-destination.r 1 0 0 0 0 0 0;
+3-fbLoop.r 0 0 0 0 0 0;
+4-destination.r 1 0 0 0 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 1 0 0 0 0 0 0;
+5-fbLoop.r 0 0 0 0 0 0;
+6-destination.r 0 0 0 0 0 5 0;
+6-fbLoop.r 0 0 0 0 0 6;
+
+// Algorithm 32
+;
+1-destination.r 1 0 0 0 0 0 0;
+1-fbLoop.r 0 0 0 0 0 0;
+2-destination.r 1 0 0 0 0 0 0;
+2-fbLoop.r 0 0 0 0 0 0;
+3-destination.r 1 0 0 0 0 0 0;
+3-fbLoop.r 0 0 0 0 0 0;
+4-destination.r 1 0 0 0 0 0 0;
+4-fbLoop.r 0 0 0 0 0 0;
+5-destination.r 1 0 0 0 0 0 0;
+5-fbLoop.r 0 0 0 0 0 0;
+6-destination.r 1 0 0 0 0 0 0;
+6-fbLoop.r 0 0 0 0 0 6;

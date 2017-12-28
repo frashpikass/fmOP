@@ -1,0 +1,91 @@
+#N canvas 803 185 864 581 10;
+#X obj 243 464 cnv 15 384 88 empty empty Output 20 12 0 14 -135137
+-64 0;
+#X obj 288 34 cnv 15 286 266 empty empty MIDI\ Input\ Test 20 12 0
+14 -262113 -258049 0;
+#X obj 298 59 cnv 15 266 100 empty empty Single\ tone\ test 20 12 0
+14 -262125 -1 0;
+#X obj 609 120 ftom;
+#X floatatom 421 104 5 0 0 0 - - -, f 5;
+#X floatatom 421 130 5 0 0 0 - - -, f 5;
+#X text 463 104 Hz;
+#X text 312 97 KeyDown;
+#X text 363 97 KeyUp;
+#X obj 84 211 pack 69 100;
+#X obj 111 165 expr int($f1);
+#X obj 164 211 pack 69 0;
+#X obj 69 252 l;
+#X obj 149 252 l;
+#X obj 326 117 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 373 117 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 84 118 t b b;
+#X obj 609 56 loadbang;
+#X obj 609 87 440;
+#X obj 298 170 cnv 15 266 100 empty empty Input\ from\ MIDI\ device
+20 12 0 14 -262125 -1 0;
+#X obj 397 197 tgl 15 0 empty empty Activate 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 271 496 outlet;
+#X obj 609 155 notein;
+#X floatatom 413 237 5 0 0 2 Note - -, f 5;
+#X floatatom 453 237 5 0 0 2 Vel - -, f 5;
+#X floatatom 493 237 5 0 0 2 Channel - -, f 5;
+#X obj 413 308 pack 0 0;
+#X text 323 237 Last message:;
+#X obj 364 344 spigot;
+#X obj 593 58 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 421 84 Send this MIDI note;
+#X text 459 130 Appx. MIDI Note;
+#X text 11 26 MIDI note generator for patch testing.;
+#X text 11 48 (C) 2017 Frash Pikass;
+#X text 401 513 Out2: Frequency;
+#X text 516 513 Out3: Velocity;
+#X text 271 513 Out1: MIDI message;
+#X obj 401 496 outlet;
+#X obj 516 496 outlet;
+#X text 291 283 V;
+#X text 291 269 MIDI message;
+#X text 399 269 Freq. (Hz);
+#X text 516 269 Midi vel.;
+#X text 425 283 V;
+#X text 560 283 V;
+#X obj 401 418 unpack 0 0;
+#X obj 401 440 mtof;
+#X text 11 4 testInput.pd;
+#X connect 3 0 5 0;
+#X connect 4 0 3 0;
+#X connect 5 0 10 0;
+#X connect 9 0 12 1;
+#X connect 10 0 9 0;
+#X connect 10 0 11 0;
+#X connect 11 0 13 1;
+#X connect 12 0 21 0;
+#X connect 12 0 45 0;
+#X connect 13 0 21 0;
+#X connect 13 0 45 0;
+#X connect 14 0 12 0;
+#X connect 14 0 16 0;
+#X connect 15 0 13 0;
+#X connect 15 0 16 0;
+#X connect 16 0 11 0;
+#X connect 16 0 9 0;
+#X connect 16 1 10 0;
+#X connect 17 0 18 0;
+#X connect 18 0 4 0;
+#X connect 20 0 28 1;
+#X connect 22 0 23 0;
+#X connect 22 1 24 0;
+#X connect 22 2 25 0;
+#X connect 23 0 26 0;
+#X connect 24 0 26 1;
+#X connect 26 0 28 0;
+#X connect 28 0 21 0;
+#X connect 28 0 45 0;
+#X connect 29 0 18 0;
+#X connect 45 0 46 0;
+#X connect 45 1 38 0;
+#X connect 46 0 37 0;
+#X coords 0 -1 1 1 288 268 1 287 33;

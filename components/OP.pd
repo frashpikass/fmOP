@@ -1,4 +1,4 @@
-#N canvas 216 41 1460 893 10;
+#N canvas -9 29 1910 993 10;
 #X obj 1174 287 cnv 15 256 50 empty empty Handle\ connections 20 12
 0 14 -233017 -2049 0;
 #X obj 610 709 cnv 15 228 130 empty empty empty 20 12 0 14 -260160
@@ -13,7 +13,7 @@
 0;
 #X obj 634 340 cnv 15 194 160 empty empty empty 20 12 0 14 -131136
 -66577 0;
-#X obj 29 404 cnv 15 126 59 empty empty HEART\ <3 20 12 0 14 -258049
+#X obj 29 426 cnv 15 126 59 empty empty HEART\ <3 20 12 0 14 -258049
 -262144 0;
 #X obj 28 778 cnv 15 455 93 empty empty Outputs 20 12 0 14 -135137
 -64 0;
@@ -25,7 +25,7 @@
 0;
 #X obj 29 11 cnv 15 670 104 empty empty Inputs 20 12 0 14 -135137 -64
 0;
-#X obj 42 432 osc~;
+#X obj 42 454 osc~;
 #X text 879 759 OP.pd - An FM operator inspired by Yamaha DX7;
 #X obj 42 527 *~;
 #X obj 42 814 outlet~;
@@ -58,24 +58,24 @@
 #X text 57 547 Operator output scaling;
 #X obj 57 655 *;
 #X text 67 526 Amplitude envelope;
-#X text 74 431 Oscillator;
-#X text 155 200 Modulator scaling;
+#X text 74 453 Oscillator;
+#X text 155 219 Modulator scaling;
 #X floatatom 75 683 5 0 0 0 - - -, f 5;
 #X text 664 287 Frontend (Interface);
 #X obj 57 589 / 100;
-#X obj 86 282 t b f;
-#X obj 174 282 t b f;
-#X obj 250 282 t b f;
-#X obj 323 282 t b f;
-#X text 122 282 $f2;
-#X text 209 282 $f3;
-#X text 285 282 $f4;
-#X text 357 282 $f5;
-#X text 45 282 $v1;
-#X floatatom 129 316 5 0 0 0 - - -, f 5;
-#X floatatom 217 316 5 0 0 0 - - -, f 5;
-#X floatatom 304 316 5 0 0 0 - - -, f 5;
-#X floatatom 391 316 5 0 0 0 - - -, f 5;
+#X obj 86 301 t b f;
+#X obj 174 301 t b f;
+#X obj 250 301 t b f;
+#X obj 323 301 t b f;
+#X text 122 301 $f2;
+#X text 209 301 $f3;
+#X text 285 301 $f4;
+#X text 357 301 $f5;
+#X text 45 301 $v1;
+#X floatatom 129 335 5 0 0 0 - - -, f 5;
+#X floatatom 217 335 5 0 0 0 - - -, f 5;
+#X floatatom 304 335 5 0 0 0 - - -, f 5;
+#X floatatom 391 335 5 0 0 0 - - -, f 5;
 #X obj 866 339 tools/testOutput;
 #X text 879 777 (C) 2017 Frash Pikass;
 #X obj 866 11 tools/testInput;
@@ -93,8 +93,8 @@
 #X text 773 576 Hz;
 #X floatatom 779 736 5 0 0 0 - #1-fbAmp.r #1-fbAmp.s, f 5;
 #X text 629 736 Feedback input amplitude;
-#X obj 391 282 t b f;
-#X floatatom 479 316 5 0 0 0 - - -, f 5;
+#X obj 391 301 t b f;
+#X floatatom 479 335 5 0 0 0 - - -, f 5;
 #X obj 128 814 outlet;
 #X text 40 833 Out1: signal;
 #X text 128 833 Out2: send to this OP;
@@ -102,10 +102,10 @@
 #X obj 272 814 outlet;
 #X text 567 44 IN4: Feedback signal;
 #X obj 567 63 inlet~;
-#X text 426 282 $f6;
-#X obj 42 349 expr~ ($f3)*$f2*$f5*$v1 + (1-$f3)*$f4*$v1 + $f5*$f2 +$f6*$v7
+#X text 426 301 $f6;
+#X obj 42 368 expr~ ($f3)*$f2*$f5*$v1 + (1-$f3)*$f4*$v1 + $f5*$f2 +$f6*$v7
 , f 88;
-#X text 546 282 $v7;
+#X text 546 301 $v7;
 #X obj 705 771 tgl 15 0 \$1-out1.s \$1-out1.r 1 5 -8 0 10 -262144 -1
 -1 0 1;
 #X obj 724 771 tgl 15 0 \$1-out2.s \$1-out2.r 2 5 -8 0 10 -262144 -1
@@ -247,38 +247,39 @@ whenever a configuration is loaded or saved;
 #X obj 1196 229 1;
 #X text 1196 183 Load some defaults;
 #X obj 1196 250 s \$1-sync.r;
-#X obj 174 221 r \$1-sync.r;
-#X obj 181 244 r \$1-sync.s;
-#X obj 250 221 r \$1-fAbs.r;
-#X obj 257 246 r \$1-fAbs.s;
-#X obj 86 221 r \$1-fRatio.r;
-#X obj 93 244 r \$1-fRatio.s;
+#X obj 174 240 r \$1-sync.r;
+#X obj 181 263 r \$1-sync.s;
+#X obj 250 240 r \$1-fAbs.r;
+#X obj 257 265 r \$1-fAbs.s;
+#X obj 86 240 r \$1-fRatio.r;
+#X obj 93 263 r \$1-fRatio.s;
 #X obj 1303 251 s \$1-fRatio.r;
 #X obj 57 567 r \$1-level.s;
 #X obj 1193 141 s \$1-fRatio.r;
 #X obj 142 567 r \$1-active.s;
-#X obj 391 221 r \$1-fbAmp.r;
-#X obj 398 244 r \$1-fbAmp.s;
+#X obj 391 240 r \$1-fbAmp.r;
+#X obj 398 263 r \$1-fbAmp.s;
 #X obj 128 732 r \$1-destination.r;
 #X obj 272 731 r \$1-fbLoop.r;
 #X obj 282 755 r \$1-fbLoop.s;
 #X obj 139 755 r \$1-destination.s;
-#X text 60 89 fRatio (Mod/Main ratio) acts as a multiplier (amplifier)
+#X text 46 87 fRatio (Mod/Main ratio) acts as a multiplier (amplifier)
 for the incoming modulator signal if it's in sync with main frequency
 (option SCALE WITH OUTPUT FREQ.). \; It also acts as a multiplier
 for the main frequency of the oscillator \, which is the note frequency.
 ;
 #X floatatom 779 652 5 0 0 0 Freq.Fine #1-fFine.r #1-fFine.s, f 5
 ;
-#X obj 325 249 +;
-#X obj 356 175 r \$1-fFine.s;
-#X obj 356 194 r \$1-fFine.r;
-#X obj 336 220 t b;
+#X obj 334 268 +;
+#X obj 365 194 r \$1-fFine.s;
+#X obj 365 213 r \$1-fFine.r;
+#X obj 345 239 t b;
+#X obj 323 165 pitchbendwheel;
 #X connect 13 0 15 0;
 #X connect 15 0 38 0;
 #X connect 17 0 15 1;
 #X connect 24 0 86 0;
-#X connect 28 0 128 0;
+#X connect 28 0 132 0;
 #X connect 29 0 17 0;
 #X connect 29 0 66 0;
 #X connect 31 0 32 0;
@@ -334,4 +335,5 @@ for the main frequency of the oscillator \, which is the note frequency.
 #X connect 130 0 128 1;
 #X connect 130 0 131 0;
 #X connect 131 0 128 0;
+#X connect 132 0 128 0;
 #X coords 0 -1 1 1 230 531 1 609 309;

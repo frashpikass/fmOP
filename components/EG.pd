@@ -1,4 +1,4 @@
-#N canvas 119 18 1528 933 10;
+#N canvas -9 -9 1910 993 10;
 #X obj 921 41 cnv 15 216 79 empty empty Velocity\ test 20 12 0 14 -262113
 -258049 0;
 #X obj 601 762 cnv 15 231 59 empty empty Out:\ LR4\ volume\ envelope
@@ -106,6 +106,7 @@ Use\ MIDI\ velocity 17 7 0 10 -262144 -1 -1 0 1;
 #X text 17 15 An LR4 envelope generator using 4 levels \, 4 variation
 rates and MIDI velocity.;
 #X text 17 41 (C) 2017 Frash Pikass;
+#X obj 1603 212 image LR4.png 0;
 #X connect 17 0 18 0;
 #X connect 18 0 42 0;
 #X connect 18 1 69 0;

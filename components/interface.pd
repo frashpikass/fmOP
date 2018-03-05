@@ -1,7 +1,7 @@
 #N canvas 0 0 1892 975 10;
 #X obj 503 23 cnv 15 1438 898 empty empty empty 20 12 0 14 -135137
 -66577 0;
-#X obj 822 829 cnv 15 1104 62 empty empty empty 20 12 0 14 -1 -66577
+#X obj 822 829 cnv 15 928 62 empty empty empty 20 12 0 14 -1 -66577
 0;
 #X obj 822 570 cnv 15 1104 253 empty empty empty 20 12 0 14 -1 -64
 0;
@@ -88,15 +88,15 @@
 #X obj 988 33 OP 3;
 #X obj 752 33 OP 2;
 #X obj 516 33 OP 1;
-#X obj 823 830 cnv 15 1102 60 empty empty empty 20 12 0 14 -261682
--66577 0;
+#X obj 823 830 cnv 15 926 60 empty empty empty 20 12 0 14 -261682 -66577
+0;
 #X obj 889 865 bng 20 250 50 0 \$0-save.s \$0-save.r save 22 7 0 10
 -261234 -1 -1;
 #X obj 828 865 bng 20 250 50 0 \$0-load.s \$0-load.r load 22 7 0 10
 -204786 -1 -1;
-#X obj 828 835 cnv 15 1092 20 \$0-preset.name.s \$0-preset.name.r PRESET_FILE:no_preset_loaded
+#X obj 828 835 cnv 15 916 20 \$0-preset.name.s \$0-preset.name.r PRESET_FILE:no_preset_loaded
 5 10 0 10 -86853 -261682 0;
-#N canvas 664 37 948 933 presets 0;
+#N canvas 460 68 948 809 presets 1;
 #X text 374 -435 SEND: \$0-<parameter_name>.s;
 #X text 374 -415 RECEIVE: \$0-<parameter_name>.r;
 #X text 374 -525 In order for a parameter that is in the parent patch
@@ -131,7 +131,7 @@ least there is no need to patch all the send and receives.;
 #X obj 151 -267 makefilename PRESET_FILE:%s;
 #X obj 21 -80 list prepend \$0;
 #X msg 21 -34 \; \$2.r \$3 \;;
-#N canvas 903 275 762 510 getValues 0;
+#N canvas 830 350 762 533 getValues 1;
 #X obj 101 30 inlet;
 #X obj 220 110 s 1-get.values;
 #X obj 220 137 s 2-get.values;
@@ -139,15 +139,18 @@ least there is no need to patch all the send and receives.;
 #X obj 220 191 s 4-get.values;
 #X obj 220 218 s 5-get.values;
 #X obj 220 245 s 6-get.values;
-#X obj 430 124 tools/save.operator 1;
-#X obj 430 146 tools/save.operator 2;
-#X obj 430 168 tools/save.operator 3;
-#X obj 430 190 tools/save.operator 4;
-#X obj 430 212 tools/save.operator 5;
-#X obj 430 234 tools/save.operator 6;
+#X obj 429 123 tools/save.operator 1;
+#X obj 429 145 tools/save.operator 2;
+#X obj 429 167 tools/save.operator 3;
+#X obj 429 189 tools/save.operator 4;
+#X obj 429 211 tools/save.operator 5;
+#X obj 429 233 tools/save.operator 6;
 #X text 429 101 Parameter declarations;
 #X obj 101 299 outlet;
 #X obj 101 74 t s b b b b b b;
+#X obj 429 287 tools/save.param 1 mw_lfo_max_f;
+#X obj 429 309 tools/save.param 1 mw_lfo_max_a;
+#X text 429 265 Parameter declarations for Modwheel;
 #X connect 0 0 15 0;
 #X connect 15 0 14 0;
 #X connect 15 1 6 0;
@@ -186,7 +189,7 @@ least there is no need to patch all the send and receives.;
 #X connect 27 1 16 0;
 #X connect 27 2 19 0;
 #X connect 30 0 6 0;
-#X restore 1955 851 pd presets;
+#X restore 423 901 pd presets;
 #X obj 1442 793 bng 20 250 50 0 loadAlgBng empty Load: -31 7 0 10 -262144
 -1 -184320;
 #X msg -147 1228 // Algorithm 1 \; 1-destination.r 1 0 0 0 0 0 0 \;
@@ -382,6 +385,30 @@ least there is no need to patch all the send and receives.;
 1 0 0 0 0 0 0 \; 5-fbLoop.r 0 0 0 0 0 0 \; 6-destination.r 1 0 0 0
 0 0 0 \; 6-fbLoop.r 0 0 0 0 0 6 \;;
 #X obj 1373 689 image algs1.png 0;
+#X obj 2120 496 ctlin;
+#X floatatom 2182 513 5 0 0 0 - - -, f 5;
+#X floatatom 2224 513 5 0 0 0 - - -, f 5;
+#X floatatom 2266 513 5 0 0 0 - - -, f 5;
+#X obj 2134 532 expr ( ($i1 == 1) && ($i2 == 3) );
+#X obj 2120 562 spigot;
+#X floatatom 2064 579 5 0 0 0 - - -, f 5;
+#X text 2179 496 Reading the modwheel;
+#X obj 2120 715 osc~;
+#X obj 2120 657 expr $f1 * $f2 / 127;
+#X obj 2252 657 expr $f1 * $f2 / 127;
+#X obj 2220 596 t b;
+#X floatatom 2120 679 5 0 0 0 - - -, f 5;
+#X floatatom 2252 679 5 0 0 0 - - -, f 5;
+#X obj 2269 640 f 1;
+#X text 2162 561 Filtering out the modwheel;
+#X obj 2128 640 f 10;
+#X text 2166 638 LFO frequency;
+#X text 2295 639 LFO amplitude;
+#X text 43 170 Multiplexing and routing the note to the various voices
+;
+#X text -138 329 16 playable voices;
+#X text 294 901 Save and load logic:;
+#X obj 1757 829 modwheel 1;
 #X connect 5 0 13 0;
 #X connect 5 1 13 1;
 #X connect 6 0 14 0;
@@ -462,4 +489,22 @@ least there is no need to patch all the send and receives.;
 #X connect 40 0 39 0;
 #X connect 57 0 39 0;
 #X connect 57 1 36 0;
+#X connect 104 0 105 0;
+#X connect 104 0 109 0;
+#X connect 104 1 106 0;
+#X connect 104 1 108 0;
+#X connect 104 2 107 0;
+#X connect 104 2 108 1;
+#X connect 108 0 109 1;
+#X connect 109 0 110 0;
+#X connect 109 0 113 0;
+#X connect 109 0 114 0;
+#X connect 109 0 115 0;
+#X connect 113 0 116 0;
+#X connect 114 0 117 0;
+#X connect 115 0 118 0;
+#X connect 115 0 120 0;
+#X connect 116 0 112 0;
+#X connect 118 0 114 1;
+#X connect 120 0 113 1;
 #X coords 0 -1 1 1 1440 900 2 502 22;

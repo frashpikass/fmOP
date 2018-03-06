@@ -94,9 +94,9 @@
 -261234 -1 -1;
 #X obj 828 865 bng 20 250 50 0 \$0-load.s \$0-load.r load 22 7 0 10
 -204786 -1 -1;
-#X obj 828 835 cnv 15 916 20 \$0-preset.name.s \$0-preset.name.r PRESET_FILE:no_preset_loaded
+#X obj 828 835 cnv 15 916 20 \$0-preset.name.s \$0-preset.name.r PRESET_FILE:C:/Users/Frash/Documents/pd/fmOP/presets/broken
 5 10 0 10 -86853 -261682 0;
-#N canvas 460 68 948 809 presets 1;
+#N canvas 460 68 948 809 presets 0;
 #X text 374 -435 SEND: \$0-<parameter_name>.s;
 #X text 374 -415 RECEIVE: \$0-<parameter_name>.r;
 #X text 374 -525 In order for a parameter that is in the parent patch
@@ -131,7 +131,7 @@ least there is no need to patch all the send and receives.;
 #X obj 151 -267 makefilename PRESET_FILE:%s;
 #X obj 21 -80 list prepend \$0;
 #X msg 21 -34 \; \$2.r \$3 \;;
-#N canvas 830 350 762 533 getValues 1;
+#N canvas 830 350 762 533 getValues 0;
 #X obj 101 30 inlet;
 #X obj 220 110 s 1-get.values;
 #X obj 220 137 s 2-get.values;
@@ -385,25 +385,6 @@ least there is no need to patch all the send and receives.;
 1 0 0 0 0 0 0 \; 5-fbLoop.r 0 0 0 0 0 0 \; 6-destination.r 1 0 0 0
 0 0 0 \; 6-fbLoop.r 0 0 0 0 0 6 \;;
 #X obj 1373 689 image algs1.png 0;
-#X obj 2120 496 ctlin;
-#X floatatom 2182 513 5 0 0 0 - - -, f 5;
-#X floatatom 2224 513 5 0 0 0 - - -, f 5;
-#X floatatom 2266 513 5 0 0 0 - - -, f 5;
-#X obj 2134 532 expr ( ($i1 == 1) && ($i2 == 3) );
-#X obj 2120 562 spigot;
-#X floatatom 2064 579 5 0 0 0 - - -, f 5;
-#X text 2179 496 Reading the modwheel;
-#X obj 2120 715 osc~;
-#X obj 2120 657 expr $f1 * $f2 / 127;
-#X obj 2252 657 expr $f1 * $f2 / 127;
-#X obj 2220 596 t b;
-#X floatatom 2120 679 5 0 0 0 - - -, f 5;
-#X floatatom 2252 679 5 0 0 0 - - -, f 5;
-#X obj 2269 640 f 1;
-#X text 2162 561 Filtering out the modwheel;
-#X obj 2128 640 f 10;
-#X text 2166 638 LFO frequency;
-#X text 2295 639 LFO amplitude;
 #X text 43 170 Multiplexing and routing the note to the various voices
 ;
 #X text -138 329 16 playable voices;
@@ -489,22 +470,4 @@ least there is no need to patch all the send and receives.;
 #X connect 40 0 39 0;
 #X connect 57 0 39 0;
 #X connect 57 1 36 0;
-#X connect 104 0 105 0;
-#X connect 104 0 109 0;
-#X connect 104 1 106 0;
-#X connect 104 1 108 0;
-#X connect 104 2 107 0;
-#X connect 104 2 108 1;
-#X connect 108 0 109 1;
-#X connect 109 0 110 0;
-#X connect 109 0 113 0;
-#X connect 109 0 114 0;
-#X connect 109 0 115 0;
-#X connect 113 0 116 0;
-#X connect 114 0 117 0;
-#X connect 115 0 118 0;
-#X connect 115 0 120 0;
-#X connect 116 0 112 0;
-#X connect 118 0 114 1;
-#X connect 120 0 113 1;
 #X coords 0 -1 1 1 1440 900 2 502 22;

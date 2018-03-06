@@ -1,6 +1,6 @@
 #N canvas 0 0 1892 975 10;
-#X obj 153 401 cnv 15 406 51 empty empty empty 20 12 0 14 -135137 -66577
-0;
+#X obj 162 504 cnv 15 488 158 empty empty empty 20 12 0 14 -135137
+-66577 0;
 #X obj 488 160 cnv 15 175 85 empty empty Modwheel\ LFO 21 12 0 14 -248534
 -64 0;
 #X obj 509 187 cnv 15 135 45 empty empty empty 20 12 0 14 -252960 -66577
@@ -13,38 +13,43 @@
 #X obj 188 266 spigot;
 #X floatatom 132 283 5 0 0 0 - - -, f 5;
 #X text 247 200 Reading the modwheel;
-#X obj 188 404 osc~;
-#X obj 188 361 expr $f1 * $f2 / 127;
-#X obj 320 361 expr $f1 * $f2 / 127;
-#X floatatom 320 383 5 0 0 0 - - -, f 5;
+#X obj 188 525 osc~;
+#X obj 188 442 expr $f1 * $f2 / 127;
 #X text 230 265 Filtering out the modwheel;
-#X text 223 344 LFO frequency;
-#X text 343 344 LFO amplitude;
+#X text 223 425 LFO frequency;
 #X text 9 -3 modwheel.pd;
 #X text 9 13 Sketch to handle modwheel control and its interface;
 #X text 6 31 (c) 2018 Frash Pikass;
-#X floatatom 604 191 5 0 0 0 max_frequency #1-mw_lfo_max_f.r #1-mw_lfo_max_f.s
+#X floatatom 604 191 5 0 0 0 Max_Frequency #1-mw_lfo_max_f.r #1-mw_lfo_max_f.s
 , f 5;
-#X floatatom 604 212 5 0 0 0 max_amplitude #1-mw_lfo_max_a.r #1-mw_lfo_max_a.s
+#X floatatom 604 212 5 0 0 0 Depth #1-mw_lfo_max_a.r #1-mw_lfo_max_a.s
 , f 5;
 #X obj 488 44 loadbang;
 #X obj 488 88 f 30;
-#X obj 614 88 f 440;
 #X obj 553 44 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 188 426 throw~ mw_lfo;
 #X obj 488 110 s \$1-mw_lfo_max_f.r;
 #X obj 614 110 s \$1-mw_lfo_max_a.r;
-#X floatatom 488 308 5 0 0 0 - - -, f 5;
-#X floatatom 614 308 5 0 0 0 - - -, f 5;
+#X floatatom 527 338 5 0 0 0 - - -, f 5;
+#X floatatom 653 338 5 0 0 0 - - -, f 5;
 #X obj 488 286 r \$1-mw_lfo_max_f.s;
 #X obj 614 286 r \$1-mw_lfo_max_a.s;
-#X floatatom 188 383 5 0 0 0 - - -, f 5;
-#X obj 320 426 s mw_lfo_a;
+#X floatatom 314 459 5 0 0 0 - - -, f 5;
 #X text 832 205 8-8-8-8-8-8-8-8--8-8--8-8-8--8-8-8-8;
 #X text 662 87 default values;
 #X text 7 57 Parameters: \$1 = modwheel number;
-#X text 399 427 Outputs (not outlets);
+#X text 509 511 Outputs (not outlets);
+#X obj 188 601 send~ mw_lfo;
+#X obj 614 88 f 0.5;
+#X obj 488 263 r \$1-mw_lfo_max_f.r;
+#X obj 614 263 r \$1-mw_lfo_max_a.r;
+#X obj 488 338 t b f;
+#X obj 614 338 t b f;
+#X obj 188 569 expr~ ($f2 > 0)*$v1 + ($f2 <= 0);
+#X text 189 622 LFO for Tremolo;
+#X obj 414 601 s~ mw_lfo_vibrato;
+#X text 414 622 LFO for Vibrato;
+#X obj 414 569 expr~ ($f2 > 0)*$v1;
 #X connect 3 0 4 0;
 #X connect 3 0 8 0;
 #X connect 3 1 5 0;
@@ -54,20 +59,27 @@
 #X connect 7 0 8 1;
 #X connect 8 0 9 0;
 #X connect 8 0 12 0;
-#X connect 8 0 13 0;
-#X connect 11 0 27 0;
+#X connect 8 0 40 1;
+#X connect 8 0 44 1;
+#X connect 11 0 40 0;
+#X connect 11 0 44 0;
 #X connect 12 0 11 0;
-#X connect 12 0 34 0;
-#X connect 13 0 14 0;
-#X connect 13 0 35 0;
-#X connect 23 0 24 0;
-#X connect 23 0 25 0;
-#X connect 24 0 28 0;
-#X connect 25 0 29 0;
-#X connect 26 0 24 0;
-#X connect 26 0 25 0;
-#X connect 32 0 30 0;
-#X connect 32 0 12 1;
-#X connect 33 0 31 0;
-#X connect 33 0 13 1;
+#X connect 12 0 29 0;
+#X connect 20 0 21 0;
+#X connect 20 0 35 0;
+#X connect 21 0 23 0;
+#X connect 22 0 21 0;
+#X connect 22 0 35 0;
+#X connect 27 0 25 0;
+#X connect 27 0 38 0;
+#X connect 28 0 26 0;
+#X connect 28 0 39 0;
+#X connect 35 0 24 0;
+#X connect 36 0 38 0;
+#X connect 37 0 39 0;
+#X connect 38 0 12 0;
+#X connect 38 1 12 1;
+#X connect 39 0 12 0;
+#X connect 40 0 34 0;
+#X connect 44 0 42 0;
 #X coords 0 -1 1 1 176 86 1 487 159;

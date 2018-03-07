@@ -1,5 +1,5 @@
-#N canvas 0 0 1892 975 10;
-#X obj 162 504 cnv 15 488 158 empty empty empty 20 12 0 14 -135137
+#N canvas 478 100 873 789 10;
+#X obj 162 624 cnv 15 488 158 empty empty empty 20 12 0 14 -135137
 -66577 0;
 #X obj 488 160 cnv 15 175 85 empty empty Modwheel\ LFO 21 12 0 14 -248534
 -64 0;
@@ -13,7 +13,7 @@
 #X obj 188 266 spigot;
 #X floatatom 132 283 5 0 0 0 - - -, f 5;
 #X text 247 200 Reading the modwheel;
-#X obj 188 525 osc~;
+#X obj 188 645 osc~;
 #X obj 188 442 expr $f1 * $f2 / 127;
 #X text 230 265 Filtering out the modwheel;
 #X text 223 425 LFO frequency;
@@ -38,18 +38,25 @@
 #X text 832 205 8-8-8-8-8-8-8-8--8-8--8-8-8--8-8-8-8;
 #X text 662 87 default values;
 #X text 7 57 Parameters: \$1 = modwheel number;
-#X text 509 511 Outputs (not outlets);
-#X obj 188 601 send~ mw_lfo;
+#X text 509 631 Outputs (not outlets);
+#X obj 188 721 send~ mw_lfo;
 #X obj 614 88 f 0.5;
 #X obj 488 263 r \$1-mw_lfo_max_f.r;
 #X obj 614 263 r \$1-mw_lfo_max_a.r;
 #X obj 488 338 t b f;
 #X obj 614 338 t b f;
-#X obj 188 569 expr~ ($f2 > 0)*$v1 + ($f2 <= 0);
-#X text 189 622 LFO for Tremolo;
-#X obj 414 601 s~ mw_lfo_vibrato;
-#X text 414 622 LFO for Vibrato;
-#X obj 414 569 expr~ ($f2 > 0)*$v1;
+#X text 189 742 LFO for Tremolo;
+#X obj 414 721 s~ mw_lfo_vibrato;
+#X text 414 742 LFO for Vibrato;
+#X obj 414 689 expr~ ($f2 > 0)*$v1;
+#X obj 111 441 vline~;
+#X obj 42 386 t b;
+#X obj 111 386 t b;
+#X obj 42 356 moses 1;
+#X text 7 442 Click reduction;
+#X obj 188 689 expr~ $v3*$v1 + (1-$v3);
+#X obj 42 408 pack 0 150;
+#X obj 111 408 pack 1 150;
 #X connect 3 0 4 0;
 #X connect 3 0 8 0;
 #X connect 3 1 5 0;
@@ -59,12 +66,13 @@
 #X connect 7 0 8 1;
 #X connect 8 0 9 0;
 #X connect 8 0 12 0;
-#X connect 8 0 40 1;
-#X connect 8 0 44 1;
-#X connect 11 0 40 0;
-#X connect 11 0 44 0;
-#X connect 12 0 11 0;
+#X connect 8 0 43 1;
+#X connect 8 0 47 0;
+#X connect 8 0 49 1;
+#X connect 11 0 43 0;
+#X connect 11 0 49 0;
 #X connect 12 0 29 0;
+#X connect 12 0 11 0;
 #X connect 20 0 21 0;
 #X connect 20 0 35 0;
 #X connect 21 0 23 0;
@@ -80,6 +88,13 @@
 #X connect 38 0 12 0;
 #X connect 38 1 12 1;
 #X connect 39 0 12 0;
-#X connect 40 0 34 0;
-#X connect 44 0 42 0;
+#X connect 43 0 41 0;
+#X connect 44 0 49 2;
+#X connect 45 0 50 0;
+#X connect 46 0 51 0;
+#X connect 47 0 45 0;
+#X connect 47 1 46 0;
+#X connect 49 0 34 0;
+#X connect 50 0 44 0;
+#X connect 51 0 44 0;
 #X coords 0 -1 1 1 176 86 1 487 159;

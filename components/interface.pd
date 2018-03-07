@@ -1,7 +1,7 @@
 #N canvas 0 0 1892 975 10;
 #X obj 503 23 cnv 15 1438 898 empty empty empty 20 12 0 14 -135137
 -66577 0;
-#X obj 822 829 cnv 15 928 62 empty empty empty 20 12 0 14 -1 -66577
+#X obj 822 829 cnv 15 803 87 empty empty empty 20 12 0 14 -1 -66577
 0;
 #X obj 822 570 cnv 15 1104 253 empty empty empty 20 12 0 14 -1 -64
 0;
@@ -88,14 +88,14 @@
 #X obj 988 33 OP 3;
 #X obj 752 33 OP 2;
 #X obj 516 33 OP 1;
-#X obj 823 830 cnv 15 926 60 empty empty empty 20 12 0 14 -261682 -66577
+#X obj 823 830 cnv 15 801 85 empty empty empty 20 12 0 14 -261682 -66577
 0;
-#X obj 889 865 bng 20 250 50 0 \$0-save.s \$0-save.r save 22 7 0 10
+#X obj 905 873 bng 20 250 50 0 \$0-save.s \$0-save.r save 22 7 0 10
 -261234 -1 -1;
-#X obj 828 865 bng 20 250 50 0 \$0-load.s \$0-load.r load 22 7 0 10
+#X obj 844 873 bng 20 250 50 0 \$0-load.s \$0-load.r load 22 7 0 10
 -204786 -1 -1;
-#X obj 828 835 cnv 15 916 20 \$0-preset.name.s \$0-preset.name.r PRESET_FILE:C:/Users/Frash/Documents/pd/fmOP/presets/broken
-5 10 0 10 -86853 -261682 0;
+#X obj 828 835 cnv 15 791 19 \$0-preset.name.s \$0-preset.name.r PRESET_FILE:no_preset_loaded
+2 8 0 10 -86853 -261682 0;
 #N canvas 460 68 948 809 presets 0;
 #X text 374 -435 SEND: \$0-<parameter_name>.s;
 #X text 374 -415 RECEIVE: \$0-<parameter_name>.r;
@@ -389,7 +389,7 @@ least there is no need to patch all the send and receives.;
 ;
 #X text -138 329 16 playable voices;
 #X text 294 901 Save and load logic:;
-#X obj 1757 829 modwheel 1;
+#X obj 1632 829 modwheel 1;
 #X connect 5 0 13 0;
 #X connect 5 1 13 1;
 #X connect 6 0 14 0;

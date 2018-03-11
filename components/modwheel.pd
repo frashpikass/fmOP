@@ -1,4 +1,4 @@
-#N canvas 326 72 878 835 10;
+#N canvas 326 72 1062 835 10;
 #X obj 162 624 cnv 15 488 158 empty empty empty 20 12 0 14 -135137
 -66577 0;
 #X obj 508 188 cnv 15 292 85 empty empty Wheels 8 6 0 14 -248534 -64
@@ -13,9 +13,9 @@
 #X floatatom 132 283 5 0 0 0 - - -, f 5;
 #X text 44 200 Reading the modwheel;
 #X obj 188 645 osc~;
-#X obj 188 442 expr $f1 * $f2 / 127;
+#X obj 188 508 expr $f1 * $f2 / 127;
 #X text 230 265 Filtering out the modwheel;
-#X text 223 425 LFO frequency;
+#X text 195 472 LFO frequency;
 #X text 9 -3 modwheel.pd;
 #X text 9 13 Sketch to handle modwheel control and its interface;
 #X text 6 31 (c) 2018 Frash Pikass;
@@ -33,7 +33,7 @@
 #X floatatom 653 429 5 0 0 0 - - -, f 5;
 #X obj 488 377 r \$1-mw_lfo_max_f.s;
 #X obj 614 377 r \$1-mw_lfo_max_a.s;
-#X floatatom 314 459 5 0 0 0 - - -, f 5;
+#X floatatom 314 525 5 0 0 0 - - -, f 5;
 #X text 832 205 8-8-8-8-8-8-8-8--8-8--8-8-8--8-8-8-8;
 #X text 507 21 default values;
 #X text 7 57 Parameters: \$1 = modwheel number;

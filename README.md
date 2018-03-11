@@ -1,4 +1,4 @@
-# fmOP - A Pure Data FM synthesizer inspired by Yamaha DX7
+# fmOP - A 6-operator Purr Data FM synthesizer
 
 _(C) 2017-2018 Frash Pikass_
 
@@ -16,6 +16,7 @@ and provided you substitute the output abstraction in testOutput.pd with your fa
 
 
 ## Usage
+
 1. Plug in a MIDI keyboard.
 2. Launch main.pd.
 3. Set up your synth or load a preset.

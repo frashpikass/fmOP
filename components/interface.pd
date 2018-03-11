@@ -96,7 +96,7 @@
 -204786 -1 -1;
 #X obj 828 835 cnv 15 791 19 \$0-preset.name.s \$0-preset.name.r PRESET_FILE:no_preset_loaded
 2 8 0 10 -86853 -261682 0;
-#N canvas 460 68 948 809 presets 0;
+#N canvas 220 308 758 572 presets 1;
 #X text 374 -435 SEND: \$0-<parameter_name>.s;
 #X text 374 -415 RECEIVE: \$0-<parameter_name>.r;
 #X text 374 -525 In order for a parameter that is in the parent patch
@@ -131,7 +131,7 @@ least there is no need to patch all the send and receives.;
 #X obj 151 -267 makefilename PRESET_FILE:%s;
 #X obj 21 -80 list prepend \$0;
 #X msg 21 -34 \; \$2.r \$3 \;;
-#N canvas 830 350 762 533 getValues 0;
+#N canvas 1029 410 762 507 getValues 0;
 #X obj 101 30 inlet;
 #X obj 220 110 s 1-get.values;
 #X obj 220 137 s 2-get.values;
@@ -149,8 +149,12 @@ least there is no need to patch all the send and receives.;
 #X obj 101 299 outlet;
 #X obj 101 74 t s b b b b b b;
 #X obj 429 287 tools/save.param 1 mw_lfo_max_f;
-#X obj 429 309 tools/save.param 1 mw_lfo_max_a;
+#X obj 429 308 tools/save.param 1 mw_lfo_max_a;
 #X text 429 265 Parameter declarations for Modwheel;
+#X obj 429 329 tools/save.param 1 mw_ctl;
+#X obj 429 350 tools/save.param 1 mw_ch;
+#X text 429 386 Parameter declarations for Pitch bend wheel;
+#X obj 429 408 tools/save.param 1 pw_depth;
 #X connect 0 0 15 0;
 #X connect 15 0 14 0;
 #X connect 15 1 6 0;

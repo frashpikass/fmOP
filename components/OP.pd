@@ -38,7 +38,7 @@
 #X floatatom 764 533 5 0 0 0 - - -, f 5;
 #X floatatom 764 533 5 0 0 0 - #1-fAbs.r #1-fAbs.s, f 5;
 #X obj 776 705 tgl 15 0 \$1-active.s \$1-active.r ON 16 6 0 10 -262144
--1 -1 1 1;
+-1 -1 0 1;
 #X floatatom 740 705 5 0 99 0 Level #1-level.r #1-level.s, f 5;
 #X obj 42 63 inlet~;
 #X text 40 44 IN1: Modulator signal;
@@ -248,9 +248,9 @@ whenever a configuration is loaded or saved;
 #X obj 648 613 tgl 15 0 \$1-mw_tremolo.s \$1-mw_tremolo.r Tremolo 17
 7 0 10 -262144 -1 -1 0 1;
 #X obj 720 613 tgl 15 0 \$1-mw_vibrato.s \$1-mw_vibrato.r Vibrato 17
-7 0 10 -262144 -1 -1 1 1;
+7 0 10 -262144 -1 -1 0 1;
 #X text 633 704 Output:;
-#N canvas 266 36 1069 869 fBase 0;
+#N canvas 576 60 1069 869 fBase 1;
 #X obj 144 -3786 cnv 15 480 83 empty empty Outputs 20 12 0 14 -135137
 -64 0;
 #X obj 232 -4361 cnv 15 204 79 empty empty Inputs 20 12 0 14 -135137
@@ -294,17 +294,17 @@ bend wheel \, mod wheel vibrato;
 #X obj 384 -4059 -;
 #X obj 384 -4091 t b f;
 #X text 412 -4058 range;
-#X obj 369 -3984 receive~ mw_lfo_vibrato;
 #X floatatom 396 -4028 5 0 0 0 - - -, f 5;
 #X floatatom 250 -3947 5 0 0 0 - - -, f 5;
 #X obj 369 -3865 spigot~;
 #X obj 79 -3907 t b f;
+#X obj 369 -3984 receive~ mw_lfo_vibrato;
 #X connect 2 0 27 0;
-#X connect 4 0 43 0;
-#X connect 5 0 43 0;
-#X connect 6 0 41 0;
+#X connect 4 0 42 0;
+#X connect 5 0 42 0;
+#X connect 6 0 40 0;
 #X connect 6 0 16 0;
-#X connect 7 0 42 0;
+#X connect 7 0 41 0;
 #X connect 9 0 20 1;
 #X connect 13 0 16 0;
 #X connect 13 1 16 1;
@@ -312,8 +312,8 @@ bend wheel \, mod wheel vibrato;
 #X connect 15 0 13 0;
 #X connect 16 0 9 0;
 #X connect 20 0 12 0;
-#X connect 24 0 42 1;
-#X connect 25 0 42 1;
+#X connect 24 0 41 1;
+#X connect 25 0 41 1;
 #X connect 27 0 33 0;
 #X connect 27 0 28 0;
 #X connect 27 0 6 0;
@@ -328,13 +328,13 @@ bend wheel \, mod wheel vibrato;
 #X connect 34 0 36 0;
 #X connect 35 0 37 0;
 #X connect 36 0 7 1;
-#X connect 36 0 40 0;
+#X connect 36 0 39 0;
 #X connect 37 0 36 0;
 #X connect 37 1 36 1;
-#X connect 39 0 7 0;
-#X connect 42 1 20 0;
-#X connect 43 0 9 0;
-#X connect 43 1 9 1;
+#X connect 41 1 20 0;
+#X connect 42 0 9 0;
+#X connect 42 1 9 1;
+#X connect 43 0 7 0;
 #X restore 357 216 pd fBase;
 #X text 1473 119 fRatio (fBase/fMain ratio) acts as a multiplier (amplifier)
 for the incoming modulator signal if it's in sync with main frequency

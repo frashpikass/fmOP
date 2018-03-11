@@ -1,8 +1,8 @@
-#fmOP - A Pure Data FM synthesizer inspired by Yamaha DX7
+# fmOP - A Pure Data FM synthesizer inspired by Yamaha DX7
 
-##(C) 2017-2018 Frash Pikass
+__(C) 2017-2018 Frash Pikass__
 
-##Setup
+## Setup
 
 These patches have been developed using the Purr Data 2.0 distro, which you can find [here](http://l2ork.music.vt.edu/main/make-your-own-l2ork/software/).
 
@@ -15,7 +15,7 @@ They might work in Vanilla, provided you have these libraries installed:
 and provided you substitute the output abstraction in testOutput.pd with your favourite DAC abstraction.
 
 
-##Usage
+## Usage
 1. Plug in a MIDI keyboard.
 2. Launch main.pd.
 3. Set up your synth or load a preset.
@@ -24,7 +24,7 @@ and provided you substitute the output abstraction in testOutput.pd with your fa
 6. Play.
 
 
-##How to build a synth
+## How to build a synth
 
 You have many options:
 - you could manually set every parameter by hand;

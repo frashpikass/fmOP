@@ -1,6 +1,9 @@
 #fmOP - A Pure Data FM synthesizer inspired by Yamaha DX7
+
 ###(C) 2017-2018 Frash Pikass
+
 ##Setup
+
 These patches have been developed using the Purr Data 2.0 distro, which you can find [here](http://l2ork.music.vt.edu/main/make-your-own-l2ork/software/).
 
 It will probably work in Pd-l2ork and Pd-Extended too, but I haven't tested it yet.
@@ -22,6 +25,7 @@ and provided you substitute the output abstraction in testOutput.pd with your fa
 
 
 ##How to build a synth
+
 You have many options:
 - you could manually set every parameter by hand;
 - you could start by selecting one of the available FM algorithms (wait a minute for the parameters to load!)

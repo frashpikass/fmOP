@@ -1,6 +1,6 @@
 # fmOP - A Pure Data FM synthesizer inspired by Yamaha DX7
 
-__(C) 2017-2018 Frash Pikass__
+_(C) 2017-2018 Frash Pikass_
 
 ## Setup
 
